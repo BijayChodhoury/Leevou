@@ -1,5 +1,9 @@
 <?php
 	
+	// Session for redirecting to the home page
+	session_start();
+	
+
 	$email = $_POST['email'];
 	$password = $_POST['password'];
 
@@ -16,14 +20,19 @@
 		if($stmt_result->num_rows > 0){
 			$data = $stmt_result->fetch_assoc();
 			if($data['password'] === $password){
-				echo "<h2>Login Successfully<h2>";
+				//echo "<h2>Login Successfully<h2>";
+				//Now redirecting to the homepage with user details
+				$_SESSION["user"] = $email;
+				header('location:home_page.php');
 			}
 			else{
-			echo"<h2>Invalid Email or password</h2>";
+			echo "<center><strong><h1>Invalid Email or password</h1></strong></center>";
+			echo "<a href = index.html><center><strong>Click Here To Try Again</strong></a>";
 			}
 		}
 		else{
-			echo"<h2>Invalid Email or password</h2>";
+			echo "<center><strong><h1>Invalid Email or password</h1></strong></center>";
+			echo "<a href = index.html><center><strong>Click Here To Try Again</strong></a>";
 		}
 	}
 

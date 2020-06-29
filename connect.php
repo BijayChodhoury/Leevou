@@ -14,8 +14,10 @@
 			$stmt = $conn->prepare("insert into registration(firstName, lastName, gender, email, password, number) values(?, ?, ?, ?, ?, ?)");
 			$stmt->bind_param("sssssi", $firstName, $lastName, $gender, $email, $password, $number);
 			$stmt->execute();
-			echo "Registration Successfully...";
+			echo "<center><strong><h1>Registration Successful...</h1></strong></center>";
+			echo "<a href = index.html><center><strong>Click Here To LogIn</strong></a>";
 			$stmt->close();
 			$conn->close();
+			
 	}
 ?>

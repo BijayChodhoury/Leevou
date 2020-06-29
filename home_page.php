@@ -1,3 +1,7 @@
+<?php
+	session_start();
+	ob_start();
+?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
@@ -7,26 +11,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href='http://fonts.googleapis.com/css?family=Work+Sans:400,600,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
 	<!-- AddtoCart-->
 
 	<title>Home Page</title>
 
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
 <!--
-	Alert box saying you are not logged in please log in
+	Alert box saying login successful
 -->
 <script type="text/javascript">
-	alert("You are not logged in please log in");
+	alert("Login Successful!!");
 </script>
 
 
@@ -39,13 +43,20 @@
 		<div class="menu-bar">
 			<ul>
 				<li>
-					<a href="home_page.html">Home</a>
+					<a href="home_page.php">Home</a>
 				</li>
 				<li>
-					<a href="#">Services</a>
+					<!--
+						This area is to display user details
+					-->
+					<?php
+
+					echo $_SESSION["user"];
+
+					?>
 				</li>
 				<li>
-					<a href="index.html">Log In</a>
+					<a href="logout.php">LogOut</a>
 				</li>
 				<li>
 					<a href="#">Cart</a>
@@ -63,13 +74,13 @@
 				<i class="fa fa-angle-right"></i>
 				<ul>
 					<li>
-						Sub Menu-1
+						Redmi Phones
 					</li>
 					<li>
-						Sub Menu-1
+						Vivo Phones
 					</li>
 					<li>
-						Sub Menu-1
+						Oppo Phones
 					</li>
 				</ul>
 			</li>
@@ -157,7 +168,7 @@
 
 			<div class="cd-item-info">
 				<b><a href="#0">Gaming desktop</a></b>
-				<em>$9.99</em>
+				<em>$399.99</em>
 			</div> <!-- cd-item-info -->
 		</li>
 
@@ -180,7 +191,7 @@
 			
 			<div class="cd-item-info">
 				<b><a href="#0">Canon camera</a></b>
-				<em>$9.99</em>
+				<em>$69.99</em>
 			</div> <!-- cd-item-info -->
 		</li>
 		<li>
@@ -201,7 +212,7 @@
 
 			<div class="cd-item-info">
 				<b><a href="#0">Sony HD Headphone</a></b>
-				<em>$9.99</em>
+				<em>$29.99</em>
 			</div> <!-- cd-item-info -->
 		</li>
 
@@ -225,7 +236,7 @@
 			
 			<div class="cd-item-info">
 				<b><a href="#0">Gaming PC fully assembled</a></b>
-				<em>$9.99</em>
+				<em>$499.99</em>
 			</div> <!-- cd-item-info -->
 		</li>
 		<li>
@@ -248,7 +259,7 @@
 
 			<div class="cd-item-info">
 				<b><a href="#0">Office desktop</a></b>
-				<em>$9.99</em>
+				<em>$399.99</em>
 			</div> <!-- cd-item-info -->
 		</li>
 
@@ -272,7 +283,7 @@
 			
 			<div class="cd-item-info">
 				<b><a href="#0">Nikon camera</a></b>
-				<em>$9.99</em>
+				<em>$399.99</em>
 			</div> <!-- cd-item-info -->
 		</li>
 	
